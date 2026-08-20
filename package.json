@@ -1,0 +1,36 @@
+{
+  "name": "@dph/dsh-plugin-control-center",
+  "version": "0.1.0",
+  "description": "Plugin Control Center for DSH Web GUI settings: manage all installed plugins with enable/disable/delete, distinguishing native vs external plugins.",
+  "license": "MIT",
+  "keywords": ["dsh", "deepseek-harness", "deepseek", "plugin", "plugin-manager", "cordis"],
+  "author": "marcell-allews",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marcell-allews/dsh-plugin-control-center.git"
+  },
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./lib/client.js",
+    "./package.json": "./package.json"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "inject": [
+        "@deepseek-ai/dsh-client-runtime",
+        "@deepseek-ai/dsh-client-connection",
+        "@deepseek-ai/dsh-client-ui-settings"
+      ],
+      "platform": "web"
+    }
+  },
+  "files": [
+    "lib",
+    "cordis.patch.yml"
+  ]
+}
