@@ -1,0 +1,5 @@
+# dsh-plugin-control-center bundle patch: registers the Plugin Control Center
+# in the web profile settings section.
+- insert:
+    - id: ui-plugin-control-center
+      name: '@dph/dsh-plugin-control-center'
